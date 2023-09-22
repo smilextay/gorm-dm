@@ -3,7 +3,7 @@ module github.com/smilextay/gorm-dm
 go 1.21.0
 
 require (
-	github.com/smilextay/dm v0.0.0-20230922070616-0be264bb386d
+	github.com/smilextay/dm v0.0.0-20230922072505-0d642b4ba259
 	gorm.io/gorm v1.25.0
 )
 
