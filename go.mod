@@ -1,9 +1,9 @@
 module github.com/smilextay/gorm-dm
 
-go 1.21.0
+go 1.18
 
 require (
-	github.com/smilextay/dm v0.0.0-20230922072505-0d642b4ba259
+	github.com/smilextay/dm v0.0.0-20230925054544-9a664a54ce66
 	gorm.io/gorm v1.25.0
 )
 

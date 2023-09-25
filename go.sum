@@ -4,10 +4,8 @@ github.com/jinzhu/inflection v1.0.0 h1:K317FqzuhWc8YvSVlFMCCUb36O/S9MCKRDI7QkRKD
 github.com/jinzhu/inflection v1.0.0/go.mod h1:h+uFLlag+Qp1Va5pdKtLDYj+kHp5pxUVkryuEj+Srlc=
 github.com/jinzhu/now v1.1.5 h1:/o9tlHleP7gOFmsnYNz3RGnqzefHA47wQpKrrdTIwXQ=
 github.com/jinzhu/now v1.1.5/go.mod h1:d3SSVoowX0Lcu0IBviAWJpolVfI5UJVZZ7cO71lE/z8=
-github.com/smilextay/dm v0.0.0-20230922070616-0be264bb386d h1:BxHNoEssZL124csG0re4pITm1CFcZQKupTwB7WodyJU=
-github.com/smilextay/dm v0.0.0-20230922070616-0be264bb386d/go.mod h1:ZDNSDCcEyvSbfQYGvlV1WItJllcSycbo8ma897Rea0g=
-github.com/smilextay/dm v0.0.0-20230922072505-0d642b4ba259 h1:g69WTLFgwUrHbRMxukSzfPFCCbscTCXE3IcakADnAMA=
-github.com/smilextay/dm v0.0.0-20230922072505-0d642b4ba259/go.mod h1:ZDNSDCcEyvSbfQYGvlV1WItJllcSycbo8ma897Rea0g=
+github.com/smilextay/dm v0.0.0-20230925054544-9a664a54ce66 h1:wvbOcuy254NcqicFT6sTMmvWof4esn/1HMJouzosl1I=
+github.com/smilextay/dm v0.0.0-20230925054544-9a664a54ce66/go.mod h1:Ee/8SMC31M3Vr0MDcr2BdoEDUtTlftzAx0prip9lla4=
 golang.org/x/text v0.13.0 h1:ablQoSUd0tRdKxZewP80B+BaqeKJuVhuRxj/dkrun3k=
 golang.org/x/text v0.13.0/go.mod h1:TvPlkZtksWOMsz7fbANvkp4WM8x/WCo/om8BMLbz+aE=
 gorm.io/gorm v1.25.0 h1:+KtYtb2roDz14EQe4bla8CbQlmb9dN3VejSai3lprfU=
