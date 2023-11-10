@@ -37,6 +37,8 @@ var (
 	DeleteClauses = []string{"DELETE", "FROM", "WHERE", "ORDER BY", "LIMIT"}
 
 	defaultDatetimePrecision = 3
+
+	MaxVarCharSize = 16383
 )
 
 func Open(dsn string) gorm.Dialector {
@@ -237,7 +239,7 @@ func (d Dialector) getSchemaStringType(field *schema.Field) string {
 
 	if size <= 0 {
 		return "VARCHAR"
-	} else if size >= 32768 {
+	} else if size >= MaxVarCharSize {
 		return "CLOB"
 	} else {
 		return fmt.Sprintf("VARCHAR(%d)", size)
@@ -253,7 +255,7 @@ func (d Dialector) getSchemaTimeType(field *schema.Field) string {
 }
 
 func (d Dialector) getSchemaBytesType(field *schema.Field) string {
-	if field.Size > 0 && field.Size < 32768 {
+	if field.Size > 0 && field.Size < MaxVarCharSize {
 		return fmt.Sprintf("VARBINARY(%d)", field.Size)
 	}
 
