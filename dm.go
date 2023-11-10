@@ -5,6 +5,7 @@ package dm
 import (
 	"database/sql"
 	"fmt"
+	"log/slog"
 
 	_ "github.com/smilextay/dm" // 引入dm数据库驱动包
 	"gorm.io/gorm"              // 引入gorm v2包
@@ -164,17 +165,29 @@ func (d Dialector) DataTypeOf(field *schema.Field) string {
 	case schema.Bool:
 		return "BIT"
 	case schema.Int, schema.Uint:
-		return d.getSchemaIntAndUnitType(field)
+		str := d.getSchemaIntAndUnitType(field)
+		slog.Info("data type of Int", "ret ", str)
+		return str
 	case schema.Float:
-		return d.getSchemaFloatType(field)
+		str := d.getSchemaFloatType(field)
+		slog.Info("data type of Float", "ret ", str)
+		return str
 	case schema.String:
-		return d.getSchemaStringType(field)
+		str := d.getSchemaStringType(field)
+		slog.Info("data type of String", "ret ", str)
+		return str
 	case schema.Time:
-		return d.getSchemaTimeType(field)
+		str := d.getSchemaTimeType(field)
+		slog.Info("data type of Time", "ret ", str)
+		return str
 	case schema.Bytes:
-		return d.getSchemaBytesType(field)
+		str := d.getSchemaBytesType(field)
+		slog.Info("data type of Bytes", "ret ", str)
+		return str
 	default:
-		return string(field.DataType)
+		str := string(field.DataType)
+		slog.Info("data type of default ", "ret ", str)
+		return str
 		// what oracle do:
 		// notNull, _ := field.TagSettings["NOT NULL"]
 		// unique, _ := field.TagSettings["UNIQUE"]
@@ -224,7 +237,7 @@ func (d Dialector) getSchemaFloatType(field *schema.Field) string {
 
 func (d Dialector) getSchemaStringType(field *schema.Field) string {
 	size := field.Size
-
+	slog.Info("getSchemaStringType", "size", size, "field", field)
 	if size == 0 {
 		if d.DefaultStringSize > 0 {
 			size = int(d.DefaultStringSize)
@@ -238,8 +251,10 @@ func (d Dialector) getSchemaStringType(field *schema.Field) string {
 	}
 
 	if size <= 0 {
+		slog.Info("getSchemaStringType size <=0", "size", size, "field", field)
 		return "VARCHAR"
 	} else if size >= MaxVarCharSize {
+		slog.Info("getSchemaStringType size >defualt ", "size", size, "max var char size ", MaxVarCharSize)
 		return "CLOB"
 	} else {
 		return fmt.Sprintf("VARCHAR(%d)", size)
